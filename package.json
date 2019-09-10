@@ -1,30 +1,22 @@
 {
   "name": "mirror-tools",
-  "version": "0.0.2",
-  "description": "config mirror for conda npm yarn etc.",
+  "version": "0.0.1",
+  "description": "mirror conda npm yarn etc.",
   "main": "index.js",
-  "scripts": {
-    "test": "mt",
-    "main": "webpack-dev-server --open --config config/webpack.config.js",
-    "watch": "webpack --watch",
-    "dev": "webpack-dev-server --open --config config/webpack.dev.js",
-    "ncu": "ncu&&ncu -u&&yarn",
-    "buildbabel": "babel src -d dist",
-    "server": "node server.js",
-    "build": "webpack --config config/webpack.prod.js",
-    "precommit": "npm run lint-staged",
-    "prettier": "prettier --write \"./**/*.{js,jsx,css,less,md,json}\"",
-    "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix"
+  "bin": {
+    "mirror-tools": "index.js"
   },
-  "keywords": [
-    "mirror",
-    "tools",
-    "cli"
-  ],
-  "author": "yzq",
-  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
+    "axios": "^0.19.0",
+    "debug": "^3.1.0",
+    "is-buffer": "^2.0.3",
+    "ms": "^2.0.0",
+    "follow-redirects": "^1.5.10"
+  },
+  "devDependencies": {
     "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "commander": "^3.0.1",
@@ -62,11 +54,34 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.2",
     "xml-loader": "^1.2.1"
-  },   "repository": {
-  "type": "git",
-  "url": "git+https://github.com/yzqdev/mirror-tools.git"
-}, "bugs": {
-  "url": "https://github.com/yzqdev/mirror-tools#issues"
-},
+  },
+  "scripts": {
+    "test": "mt",
+    "main": "webpack-dev-server --open --config config/webpack.config.js",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --open --config config/webpack.dev.js",
+    "ncu": "ncu&&ncu -u&&yarn",
+    "buildbabel": "babel src -d dist",
+    "server": "node server.js",
+    "build": "webpack --config config/webpack.prod.js",
+    "precommit": "npm run lint-staged",
+    "prettier": "prettier --write \"./**/*.{js,jsx,css,less,md,json}\"",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yzqdev/mirror-tools.git"
+  },
+  "keywords": [
+    "cli",
+    "tools",
+    "mirror"
+  ],
+  "author": "yzq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yzqdev/mirror-tools/issues"
+  },
   "homepage": "https://github.com/yzqdev/mirror-tools#readme"
 }
